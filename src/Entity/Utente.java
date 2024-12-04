@@ -4,10 +4,10 @@ public class Utente {
     private int id;
     private String nome;
     private String cognome;
-    private Utente utente;
 
     public Utente()
     {
+        this.id = id;
         this.nome=nome;
         this.cognome=cognome;
     }
@@ -15,6 +15,11 @@ public class Utente {
     public int getId()
     {
         return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
     }
 
     public String getNome()

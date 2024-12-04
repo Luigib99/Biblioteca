@@ -4,17 +4,15 @@ import Entity.*;
 import java.util.ArrayList;
 import java.sql.*;
 
-public class Repository {
+public class UtenteRepository {
 
     //CREATE
     public void create(Utente utente) {
-        //da modificare
         String query =
                 "INSERT INTO Utente " +
-                        "(colonna1,colonna2,colonna3) "+
+                        "(cognome,nome) "+
                         "VALUES " +
-                        "('" + utente.getElemento1() +"','"+utente.getElemento2() +"','" + utente.getElemento3() +"')";
-        //resta invariato
+                        "('" + utente.getNome() +"','"+utente.getCognome()+"')";
         try
         {
             Connection c = DbConnection.openConnection();
@@ -29,12 +27,12 @@ public class Repository {
     }
 
     //READ
-    public ArrayList<Utente> readOggetto() {
-        ArrayList<Utente> listaOggetti = new ArrayList<>();
+    public ArrayList<Utente> readUtente() {
+        ArrayList<Utente> listaUtenti = new ArrayList<>();
         String query =
-                "SELECT id,elemento1,elemento2,elemento3 "+
+                "SELECT id,nome,cognome "+
                         "FROM Utente "+
-                        "ORDER BY a.id ASC";
+                        "ORDER BY id ASC";
         try {
             Connection c = DbConnection.openConnection();
             Statement stmt = c.createStatement();
@@ -44,38 +42,27 @@ public class Repository {
                 //creo l'istanza
                 Utente utente = new Utente();
                 //creo le associazioni con la tabella
-                utente.setElemento1(rs.getString("elemento1"));
-                utente.setElemento2(rs.getString("elemento2"));
-                utente.setElemento2(rs.getString("elemento3"));
-
-                /* LA LOCAL DATE SI FA COSI
-                Date data = rs.getDate("data");
-                if (data != null)
-                {
-                    utente.setData(data.toLocalDate());
-                }*/
-
+                utente.setId(rs.getInt("id"));
+                utente.setNome(rs.getString("nome"));
+                utente.setCognome(rs.getString("cognome"));
                 //aggiungo l'utente alla lista
-                listaOggetti.add(utente);
+                listaUtenti.add(utente);
 
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println(e.getMessage());
             System.exit(0);
         }
-        return listaOggetti;
+        return listaUtenti;
     }
 
-
     //DELETE
-    public void delete(Utente utente)
+    public void deleteUtente(Utente utente)
     {
-        //Da modificare
         String query =
                 "DELETE FROM Utente " +
                         "WHERE id = '" + utente.getId() + "'";
 
-        //resta invariato
         try
         {
             Connection c = DbConnection.openConnection();
@@ -90,16 +77,14 @@ public class Repository {
     }
 
     //UPDATE
-    public void updateOggetto(Utente utente)
+    public void updateUtente(Utente utente)
     {
-        //Da modificare
         String query =
                 "UPDATE Utente " +
-                        "SET colonna1 = '" + utente.getElemento1() + "', " +
-                        "colonna2 = '" + utente.getElemento2() + "' "+
+                        "SET nome = '" + utente.getNome() + "', " +
+                        "cognome = '" + utente.getCognome() + "' "+
                         "WHERE id = " + utente.getId();
 
-        //Resta invariato
         try
         {
             Connection c = DbConnection.openConnection();
