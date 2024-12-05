@@ -1,22 +1,10 @@
 package Entity;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Libro {
     private int id;
     private String idLibro;
     private String titolo;
     private String autore;
-    private List <Utente> utenti;
-
-    public Libro()
-    {
-        this.id = id;
-        this.idLibro = idLibro;
-        this.titolo = titolo;
-        this.autore = autore;
-        this.utenti = new ArrayList<Utente>();
-    }
 
     public void setId(int id)
     {
@@ -57,10 +45,4 @@ public class Libro {
     {
         this.autore = autore;
     }
-
-    public List getUtenti(ArrayList<Utente> utenti)
-    {
-        return utenti;
-    }
-
 }

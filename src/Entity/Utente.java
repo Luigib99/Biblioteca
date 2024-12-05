@@ -5,12 +5,6 @@ public class Utente {
     private String nome;
     private String cognome;
 
-    public Utente()
-    {
-        this.id = id;
-        this.nome=nome;
-        this.cognome=cognome;
-    }
 
     public int getId()
     {

@@ -1,12 +1,11 @@
 package Service;
-
-import Entity.Libro;
+import Entity.*;
 import Repository.LibroRepository;
 
 import java.util.List;
 
 public class LibroService {
-LibroRepository libroRepository = new LibroRepository();
+    LibroRepository libroRepository = new LibroRepository();
 
     //CREATE
     public void createLibro(String idLibro, String titolo, String autore)
