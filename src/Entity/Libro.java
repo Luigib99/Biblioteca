@@ -1,10 +1,14 @@
 package Entity;
 
+import java.util.List;
+
 public class Libro {
     private int id;
     private String idLibro;
     private String titolo;
     private String autore;
+    private List<Utente> listaUtenti;
+    private List <Ordine> listaOrdini;
 
     public void setId(int id)
     {
@@ -44,5 +48,27 @@ public class Libro {
     public void setAutore(String autore)
     {
         this.autore = autore;
+    }
+
+    //LIST
+
+    public void addOrdine(Ordine ordine)
+    {
+        this.listaOrdini.add(ordine);
+    }
+
+    public List<Ordine> getOrdini()
+    {
+        return listaOrdini;
+    }
+
+    public void addUtente(Utente utente)
+    {
+        this.listaUtenti.add(utente);
+    }
+
+    public List<Utente> getutenti()
+    {
+        return listaUtenti;
     }
 }

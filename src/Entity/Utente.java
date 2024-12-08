@@ -41,6 +41,8 @@ public class Utente {
         this.cognome = cognome;
     }
 
+    //LIST
+
     public void addOrdine(Ordine ordine)
     {
         this.listaOrdini.add(ordine);

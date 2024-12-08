@@ -48,22 +48,4 @@ public class UtenteController {
 
         utenteService.deleteUtente(id);
     }
-
-    public void readLibriUtente()
-    {
-        System.out.println("seleziona l'utente di cui leggere i libri");
-        readUtente();
-        int id = scanner.nextInt();
-        scanner.nextLine();
-        List <Utente> listaUtenti = utenteService.readUtente();
-        for (Utente utente: listaUtenti)
-        {
-            if (utente.getId() == id)
-            {
-                System.out.println(utente.getNome() + " " + utente.getCognome() + " " + utente.getOrdini());
-            }
-        }
-    }
-
-
 }

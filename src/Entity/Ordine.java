@@ -1,6 +1,7 @@
 package Entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Ordine {
     private int id;
@@ -8,6 +9,8 @@ public class Ordine {
     private int idUtente;
     private LocalDate dataInizio;
     private LocalDate dataFine;
+    private List <Utente> listaUtenti;
+    private List <Libro> listaLibri;
 
     public int getId() {
         return id;
@@ -57,4 +60,28 @@ public class Ordine {
     {
         this.dataFine = dataFine;
     }
+
+    //LIST
+
+    public void addUtente(Utente utente)
+    {
+        this.listaUtenti.add(utente);
+    }
+
+    public List<Utente> getUtenti()
+    {
+        return listaUtenti;
+    }
+
+    public void addLibro(Libro libro)
+    {
+        this.listaLibri.add(libro);
+    }
+
+    public List<Libro> getLibri()
+    {
+        return listaLibri;
+    }
+
+
 }

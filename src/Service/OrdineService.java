@@ -8,7 +8,7 @@ import java.util.List;
 public class OrdineService {
     OrdineRepository ordineRepository = new OrdineRepository();
 
-    public void createOrdine(String idLibro, int idUtente, LocalDate dataInizio, LocalDate dataFine, Utente utente, Libro libro)
+    public void createOrdine(String idLibro, int idUtente, LocalDate dataInizio, LocalDate dataFine)
     {
         Ordine ordine = new Ordine();
 
@@ -17,7 +17,6 @@ public class OrdineService {
         ordine.setDataInizio(dataInizio);
         ordine.setDataFine(dataFine);
         ordineRepository.createOrdine(ordine);
-        utente.addOrdine(ordine);
     }
 
     public List <Ordine> readOrdine ()

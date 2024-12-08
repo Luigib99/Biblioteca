@@ -48,16 +48,9 @@ public class OrdineRepository {
                 ordine.setIdLibro(rs.getString("idLibro"));
                 ordine.setIdUtente(rs.getInt("idUtente"));
                 Date dataInizio = rs.getDate("dataInizio");
-                if (dataInizio != null)
-                {
-                    ordine.setDataInizio(dataInizio.toLocalDate());
-                }
-
+                if (dataInizio != null) {ordine.setDataInizio(dataInizio.toLocalDate());}
                 Date dataFine = rs.getDate("dataFine");
-                if (dataInizio != null)
-                {
-                    ordine.setDataFine(dataFine.toLocalDate());
-                }
+                if (dataFine != null) {ordine.setDataFine(dataFine.toLocalDate());}
                 listaOrdini.add(ordine);
             }
         } catch (ClassNotFoundException | SQLException e) {

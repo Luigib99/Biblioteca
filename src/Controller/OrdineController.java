@@ -45,25 +45,7 @@ public class OrdineController {
                 dataFine = LocalDate.parse(scanner.nextLine());
             }
         }
-        List<Utente> listaUtenti = utenteService.readUtente();
-        Utente utenteScelto=new Utente();
-        for (Utente utente : listaUtenti)
-        {
-            if (utente.getId()==idUtente)
-            {
-                utenteScelto=utente;
-            }
-        }
-        Libro libroScelto=new Libro();
-        for (Libro libro : listaLibri)
-        {
-            if (libro.getIdLibro().equals(idLibro))
-            {
-                libroScelto=libro;
-            }
-        }
-
-        ordineService.createOrdine(idLibro,idUtente,dataInizio,dataFine,utenteScelto,libroScelto);
+        ordineService.createOrdine(idLibro,idUtente,dataInizio,dataFine);
     }
 
     //READ

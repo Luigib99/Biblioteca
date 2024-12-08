@@ -91,10 +91,6 @@ public class Main {
                     {
                         utenteController.deleteUtente();
                     }
-                    else if (choice2 ==5)
-                    {
-                        utenteController.readLibriUtente();
-                    }
                     else if (choice2 ==9)
                     {
                         System.out.println("\nINDIETRO\n");
@@ -148,6 +144,11 @@ public class Main {
                     System.out.println("---QUERY---");
                     System.out.println("Scegli cosa fare digitando il numero");
                     System.out.println("1) ORDINI PER UTENTE IN ORDINE CRONOLOGICO");
+                    System.out.println("2) LIBRI NON RIENTRATI");
+                    System.out.println("3) ORDINI PER PERIODO");
+                    System.out.println("4) ORDINI CHE SUPERANO I 15 GG");
+                    System.out.println("5) UTENTI CON PIU ORDINI");
+                    System.out.println("6) LIBRI CON PIU ORDINI");
                     System.out.println("9) INDIETRO");
 
                     choice2 = scanner.nextInt();
@@ -155,6 +156,26 @@ public class Main {
                     if (choice2 == 1)
                     {
                         queryController.query1();
+                    }
+                    else if (choice2 == 2)
+                    {
+                        queryController.query2();
+                    }
+                    else if (choice2 == 3)
+                    {
+                        queryController.query3();
+                    }
+                    else if (choice2 == 4)
+                    {
+                        queryController.query4();
+                    }
+                    else if (choice2 == 5)
+                    {
+                        queryController.query5();
+                    }
+                    else if (choice2 == 6)
+                    {
+                        queryController.query6();
                     }
                     else if (choice2 ==9)
                     {
