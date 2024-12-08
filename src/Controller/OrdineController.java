@@ -12,6 +12,7 @@ public class OrdineController {
     LibroController libroController = new LibroController();
     UtenteController utenteController = new UtenteController();
     LibroService libroService = new LibroService();
+    UtenteService utenteService = new UtenteService();
 
     //CREATE
     public void createOrdine()
@@ -44,7 +45,25 @@ public class OrdineController {
                 dataFine = LocalDate.parse(scanner.nextLine());
             }
         }
-        ordineService.createOrdine(idLibro,idUtente,dataInizio,dataFine);
+        List<Utente> listaUtenti = utenteService.readUtente();
+        Utente utenteScelto=new Utente();
+        for (Utente utente : listaUtenti)
+        {
+            if (utente.getId()==idUtente)
+            {
+                utenteScelto=utente;
+            }
+        }
+        Libro libroScelto=new Libro();
+        for (Libro libro : listaLibri)
+        {
+            if (libro.getIdLibro().equals(idLibro))
+            {
+                libroScelto=libro;
+            }
+        }
+
+        ordineService.createOrdine(idLibro,idUtente,dataInizio,dataFine,utenteScelto,libroScelto);
     }
 
     //READ

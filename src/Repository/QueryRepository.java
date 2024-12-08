@@ -31,16 +31,9 @@ public class QueryRepository {
                 libro.setTitolo(rs.getString("titolo"));
                 libro.setAutore(rs.getString("autore"));
                 Date dataInizio = rs.getDate("dataInizio");
-                if (dataInizio != null)
-                {
-                    ordine.setDataInizio(dataInizio.toLocalDate());
-                }
+                if (dataInizio != null) {ordine.setDataInizio(dataInizio.toLocalDate());}
                 Date dataFine = rs.getDate("dataFine");
-                if (dataInizio != null)
-                {
-                    ordine.setDataFine(dataFine.toLocalDate());
-                }
-                listaLibriUtente.add(utente);
+                if (dataInizio != null) {ordine.setDataFine(dataFine.toLocalDate());}listaLibriUtente.add(utente);
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println(e.getMessage());

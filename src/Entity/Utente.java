@@ -1,9 +1,14 @@
 package Entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Utente {
     private int id;
     private String nome;
     private String cognome;
+    private List <Ordine> listaOrdini = new ArrayList<>();
+    private List <Libro> listaLibri = new ArrayList<>();
 
 
     public int getId()
@@ -34,5 +39,25 @@ public class Utente {
     public void setCognome(String cognome)
     {
         this.cognome = cognome;
+    }
+
+    public void addOrdine(Ordine ordine)
+    {
+        this.listaOrdini.add(ordine);
+    }
+
+    public List<Ordine> getOrdini()
+    {
+            return listaOrdini;
+    }
+
+    public void addLibro(Libro libro)
+    {
+        this.listaLibri.add(libro);
+    }
+
+    public List<Libro> getLibro()
+    {
+        return listaLibri;
     }
 }

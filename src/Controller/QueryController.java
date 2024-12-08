@@ -20,6 +20,8 @@ public class QueryController {
         utenteController.readUtente();
         int idScelto=scanner.nextInt();
         scanner.nextLine();
+
+        //mi prendo l'utente
         Utente UtenteScelto = new Utente();
         List<Utente> listaUtenti = utenteService.readUtente();
         for(Utente utente : listaUtenti)
@@ -30,11 +32,9 @@ public class QueryController {
             }
         }
         List <Utente> listaUtentiScelti = queryService.query1(UtenteScelto);
-        List <Libro> listaLibri = libroService.readLibro();
-        List <Ordine> listaOrdini = ordineService.readOrdine();
         for (Utente utente : listaUtentiScelti)
         {
-            System.out.println(utente.getNome() + " " + utente.getCognome());
+            System.out.println(utente.getNome() + " " + utente.getCognome() + utente.getLibro() + " " + utente.getOrdini());
         }
 
     }

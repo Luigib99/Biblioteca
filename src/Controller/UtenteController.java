@@ -60,7 +60,7 @@ public class UtenteController {
         {
             if (utente.getId() == id)
             {
-                System.out.println(utente.getNome() + " " + utente.getCognome() + utente.getLibri());
+                System.out.println(utente.getNome() + " " + utente.getCognome() + " " + utente.getOrdini());
             }
         }
     }
