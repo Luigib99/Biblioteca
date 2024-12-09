@@ -1,6 +1,7 @@
 package Entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ordine {
@@ -9,8 +10,8 @@ public class Ordine {
     private int idUtente;
     private LocalDate dataInizio;
     private LocalDate dataFine;
-    private List <Utente> listaUtenti;
-    private List <Libro> listaLibri;
+    private List <Utente> listaUtenti = new ArrayList<>();
+    private List <Libro> listaLibri = new ArrayList<>();
 
     public int getId() {
         return id;

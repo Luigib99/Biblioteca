@@ -11,8 +11,6 @@ public class QueryController {
     UtenteController utenteController = new UtenteController();
     UtenteService utenteService = new UtenteService();
     QueryService queryService = new QueryService();
-    LibroService libroService = new LibroService();
-    OrdineService ordineService = new OrdineService();
 
     public void query1()
     {

@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 public class QueryRepository {
 
-    //QUERY1
     public ArrayList<Utente> query1(Utente utente) {
         ArrayList<Utente> listaLibriUtente = new ArrayList<>();
         String query =
@@ -49,7 +48,6 @@ public class QueryRepository {
         return listaLibriUtente;
     }
 
-    //QUERY2
     public ArrayList<Libro> query2() {
         ArrayList<Libro> listaLibriNonTornati = new ArrayList<>();
         String query =
@@ -77,7 +75,6 @@ public class QueryRepository {
         return listaLibriNonTornati;
     }
 
-    //QUERY3 X
     public ArrayList<Ordine> query3(LocalDate dataScelta){
     ArrayList<Ordine> listaOrdiniPeriodo = new ArrayList<>();
     String query =
@@ -119,7 +116,6 @@ public class QueryRepository {
         return listaOrdiniPeriodo;
     }
 
-    //QUERY4 X
     public ArrayList<Ordine> query4(){
         ArrayList<Ordine> listaOrdiniPeriodo = new ArrayList<>();
         String query =
@@ -161,9 +157,7 @@ public class QueryRepository {
         return listaOrdiniPeriodo;
     }
 
-    //QUERY 5
-    public ArrayList<Utente> query5()
-    {
+    public ArrayList<Utente> query5() {
         ArrayList<Utente> listaUtenti = new ArrayList<>();
         String query =
                 "SELECT u.nome, u.cognome, COUNT(o.idutente) AS libriLetti " +
@@ -191,9 +185,7 @@ public class QueryRepository {
         return listaUtenti;
     }
 
-    //QUERY 6
-    public ArrayList<Libro> query6()
-    {
+    public ArrayList<Libro> query6() {
         ArrayList<Libro> listaLibri = new ArrayList<>();
         String query =
                 "SELECT l.titolo, l.autore, COUNT(o.idLibro) AS numeroDiVoltePrestato " +
